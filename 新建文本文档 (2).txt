@@ -1,0 +1,51 @@
+<div class="panel-body">
+						<div>
+							<span><b>Score: 0.40647947788238525</b></span><br>
+							<span><b>DblpAuthors: </b> Samuil Angelov@Paul W. P. J. Grefen@Danny Greefhorst@</span><br>
+							<span><b>DblpPages: </b>141-150</span><br>
+							<span><b>DblpYear: </b> 2009</span><br>
+							<span><b><a href="./Search?action=displayGraph&amp;dblpId=285660&amp;sourceRadio=ms" target="_blank">display related papers</a></b></span><br>
+						</div>
+							<br>
+							1  1    A Classification of Software <span class="text-danger"><b>Reference</b></span> Architectures:   A Classification of Software <span class="text-danger"><b>Reference</b></span> Architectures:  Analyzing Their Success and Effectiveness  Analyzing Their Success and Effectiveness       Samuil Angelov  Samuil Angelov School of Industrial Eng.  School of Industrial Eng. Eindhoven Univ. of Technology  Eindhoven Univ. of Technology s.angelov@tue.nl  s.angelov@tue.nl Paul Grefen  Paul Grefen School of Industrial Eng.  School
+							
+						</div>
+
+
+
+<div class="panel panel-info">
+						
+<div class="panel-heading">
+							
+<h2 class="panel-title">
+								
+<a href="./Search?action=displayTxt&amp;dblpId=285660&amp;sourceRadio=ms " target="_blank">A classification of software reference architectures: Analyzing their success and effectiveness.</a>
+                                &nbsp;
+                                
+<sup>
+                                    
+<a href="http://archixl.nl/files/wicsa_referencearchitecture.pdf" target="_blank">[pdf]</a>
+                                
+</sup>
+                            
+</h2>
+						
+</div>
+						
+<div class="panel-body">
+						
+<div>
+							
+<span><b>Score: 0.40647947788238525</b></span><br>
+							<span><b>DblpAuthors: </b> Samuil Angelov@Paul W. P. J. Grefen@Danny Greefhorst@</span><br>
+							
+<span><b>DblpPages: </b>141-150</span><br>
+							<span><b>DblpYear: </b> 2009</span><br>
+							
+<span><b><a href="./Search?action=displayGraph&amp;dblpId=285660&amp;sourceRadio=ms" target="_blank">display related papers</a></b></span><br>
+						</div>
+							<br>
+							1  1    A Classification of Software <span class="text-danger"><b>Reference</b></span> Architectures:   A Classification of Software <span class="text-danger"><b>Reference</b></span> Architectures:  Analyzing Their Success and Effectiveness  Analyzing Their Success and Effectiveness       Samuil Angelov  Samuil Angelov School of Industrial Eng.  School of Industrial Eng. Eindhoven Univ. of Technology  Eindhoven Univ. of Technology s.angelov@tue.nl  s.angelov@tue.nl Paul Grefen  Paul Grefen School of Industrial Eng.  School
+							
+						</div>
+					</div>

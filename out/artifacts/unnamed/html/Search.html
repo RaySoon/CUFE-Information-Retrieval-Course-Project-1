@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>IR Project 1 Search </title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script type="text/javascript" src="../js/jQuery-3.3.1.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body>
+
+<style>
+    body {
+        background: #000000;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+<!--导航-->
+<nav class="navbar navbar-inverse" role="navigation"
+     style="margin-bottom:0;background: rgba(0,0,0,0);border-style: solid;border-width: 1px;border-color:rgba(0,0,0,0);">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="../index.jsp" style="color: white;">IR Project 1</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="Search.html" style="background: rgba(0,0,0,0);color: white">
+                    <span class="glyphicon glyphicon-search"></span>&nbsp;Search</a></li>
+                <li class="active"><a href="Tasks.html" style="background: rgba(0,0,0,0);color: white">
+                    <span class="glyphicon glyphicon-tasks"></span>&nbsp;Tasks </a></li>
+                <li class="active">
+                    <a href="Members.html" style="background: rgba(0,0,0,0);color: white;">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;Members</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" style="background: rgba(0,0,0,0);color: white">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false" style="background: rgba(0,0,0,0);color: white">
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;More
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" style="background: rgba(0,0,0,0)">
+                        <li><a href="../download/ReadMe.md" style="color: white">ReadMe.md</a></li>
+                        <li><a href="../download/Slides.pdf" style="color: white">Slides.pdf</a></li>
+                        <li role="separator" class="divider" style="color: white"></li>
+                        <li><a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" style="color: white">About
+                            IR Course</a>
+                        </li>
+                        <li><a href="http://en.cufe.edu.cn/" style="color: white">About CUFE</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<!--页头-->
+<div class="page-header" style="color: white">
+    <h2>&nbsp;&nbsp;&nbsp;Academic&nbsp;Literature&nbsp;Search </h2>
+</div>
+
+<!--空行-->
+<div class="row">
+    <p><br><br><br><br><br><br><br><br><br><br><br></p>
+</div>
+
+<!--检索框-->
+<div class="container bs-docs-container center-block" style="margin-bottom:60px">
+    <form role="form" action="../servlets/searchs" method="get">
+        <div class="row">
+            <div class="row">
+                <div class="col-xs-6 col-md-6 col-md-offset-2 col-xs-offset-2">
+                    <input type="text" class="form-control input-lg" name="keywords" placeholder="fulltext search"/>
+                </div>
+                <input style="color: #fff;" type="submit" value="search"/>
+
+
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!--空行-->
+<div class="row">
+    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</div>
+
+
+</body>
+</html>
