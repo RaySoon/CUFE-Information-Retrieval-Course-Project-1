@@ -30,7 +30,7 @@ public class searchs extends javax.servlet.http.HttpServlet {
 //            System.out.println("*****************************");
 //        }
        request.setAttribute("keyword1",keyword);
-       request.getRequestDispatcher("../html/answer1.jsp").forward(request,response);
+       request.getRequestDispatcher("../jsp/Answer_Page_1.jsp").forward(request,response);
       System.out.println(keyword);
     }
 }

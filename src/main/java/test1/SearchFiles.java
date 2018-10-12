@@ -87,7 +87,7 @@ public static ArrayList<fileeach> indexSearch(String keywords){
             Analyzer analyzer1=new StandardAnalyzer();
              Query query = parser.parse(keywords);//被搜索的内容
 //            5、根据Searcher返回TopDocs
-             TopDocs tds = searcher.search(query,20);//查询20条记录
+             TopDocs tds = searcher.search(query,1000);//查询20条记录
 //            6、根据TopDocs获取ScoreDoc
              ScoreDoc[] sds = tds.scoreDocs;
 
@@ -121,7 +121,7 @@ public static ArrayList<fileeach> indexSearch(String keywords){
 
                  //高亮
                  String text1= d.get("fulltext");
-                 SimpleHTMLFormatter simpleHTMLFormatter=new SimpleHTMLFormatter("<b><font color='red'>", "</font></b>");
+                 SimpleHTMLFormatter simpleHTMLFormatter=new SimpleHTMLFormatter("<span style=\"color:red;font-weight: bold\">", "</span>");
                  Highlighter highlighter=new Highlighter(simpleHTMLFormatter,new QueryScorer(query));
                  highlighter.setTextFragmenter(new SimpleFragmenter(500));
                  if (text1!= null) {

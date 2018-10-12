@@ -63,7 +63,7 @@ public class search2 extends HttpServlet {
 
 
             request.setAttribute("listAll2",listAll);
-            request.getRequestDispatcher("/html/answer2.jsp").forward(request,response);
+            request.getRequestDispatcher("/jsp/Answer_Page_2.jsp").forward(request,response);
         }
         else{
 System.out.println("yvshu"+yvshu);
