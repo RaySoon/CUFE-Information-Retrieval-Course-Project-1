@@ -75,7 +75,7 @@ public static ArrayList<fileeach> indexSearch(String keywords){
         try{
         	
 //            1、创建Directory
-             FSDirectory directory = FSDirectory.open(Paths.get("/Users/alexsun/IdeaProjects/Information_Retrieval/IR_Project1/web/index"));//在硬盘上生成Directory
+             FSDirectory directory = FSDirectory.open(Paths.get("E:\\server\\apache-tomcat-9.0.12\\webapps\\IR_Project1\\index"));//在硬盘上生成Directory
 //            2、创建IndexReader
               IndexReader reader = DirectoryReader.open(directory);
 //            3、根据IndexWriter创建IndexSearcher
@@ -173,7 +173,7 @@ public static String indexSearch2(String keywords,String returnfile){
         try{
         	
 //            1、创建Directory
-             FSDirectory directory = FSDirectory.open(Paths.get("/Users/alexsun/IdeaProjects/Information_Retrieval/IR_Project1/web/index"));//在硬盘上生成Directory
+             FSDirectory directory = FSDirectory.open(Paths.get("E:\\server\\apache-tomcat-9.0.12\\webapps\\IR_Project1\\index"));//在硬盘上生成Directory
 //            2、创建IndexReader
               IndexReader reader = DirectoryReader.open(directory);
 //            3、根据IndexWriter创建IndexSearcher

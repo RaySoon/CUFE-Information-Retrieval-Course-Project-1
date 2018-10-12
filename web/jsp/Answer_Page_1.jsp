@@ -329,8 +329,8 @@
                         <div class="five wide column">
                             <h4 class="ui inverted header">About</h4>
                             <div class="ui inverted link list">
-                                <a href="Members.jsp" class="item">About Us</a>
-                                <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.jsp" class="item">About
+                                <a href="../jsp/Members.jsp" class="item">About Us</a>
+                                <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" class="item">About
                                     This
                                     Course</a>
                                 <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
