@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="IR_Project1:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/IR_Project1_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="IR_Project1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/sax.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/lucene-queryparser-6.6.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/lucene-highlighter-6.6.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/lucene-core-6.6.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/lucene-analyzers-smartcn-6.6.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/lucene-analyzers-common-6.6.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/kie-wb-metadata-widget-7.11.0.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/junit-jupiter-api-5.3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/dom4j-1.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/commons-io-2.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/jar/lucene-memory-6.6.3.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="IR_Project1/web/Web" />
+    </root>
+  </artifact>
+</component>
