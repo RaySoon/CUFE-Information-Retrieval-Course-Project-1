@@ -220,7 +220,7 @@
 </div>
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 
 <div class="pusher">
     <div class="ui inverted vertical footer segment">

@@ -231,7 +231,7 @@
             </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br>
+    <br><br><br>
     <div class="ui inverted vertical footer segment">
         <div class="ui container">
             <div class="ui stackable inverted divided equal height stackable grid">

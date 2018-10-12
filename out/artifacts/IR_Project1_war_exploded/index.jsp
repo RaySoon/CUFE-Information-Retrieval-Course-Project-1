@@ -204,7 +204,7 @@
                     <p>We use Semantic UI as web framework.</p>
                 </div>
                 <div class="six wide right floated column">
-                    <img src="photos/example.png" class="ui large bordered rounded image">
+                    <img src="photos/demo.png" class="ui large bordered rounded image">
                 </div>
             </div>
         </div>
