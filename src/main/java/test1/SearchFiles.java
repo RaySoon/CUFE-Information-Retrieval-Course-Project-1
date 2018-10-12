@@ -87,7 +87,7 @@ public static ArrayList<fileeach> indexSearch(String keywords){
             Analyzer analyzer1=new StandardAnalyzer();
              Query query = parser.parse(keywords);//被搜索的内容
 //            5、根据Searcher返回TopDocs
-             TopDocs tds = searcher.search(query,1000);//查询20条记录
+             TopDocs tds = searcher.search(query,3000);//查询20条记录
 //            6、根据TopDocs获取ScoreDoc
              ScoreDoc[] sds = tds.scoreDocs;
 

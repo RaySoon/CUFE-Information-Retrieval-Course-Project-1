@@ -198,6 +198,9 @@
         <div class="label">
             Results
         </div>
+        <div class="text">
+            这一页的Results是Bug
+        </div>
         <%
             if (lp2.size() > 30) {
         %>
