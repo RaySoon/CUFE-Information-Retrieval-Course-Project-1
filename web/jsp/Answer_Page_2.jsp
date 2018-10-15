@@ -157,7 +157,7 @@
 <%
     String keyword2 = (String) request.getAttribute("keyword1");
     listlala list2 = (listlala) request.getAttribute("listAll2");
-    int pagenumber=(int)request.getAttribute("pagesize2");
+    int pagenumber = (int) request.getAttribute("pagesize2");
     ArrayList<fileeach> lp2 = list2.getContent();
 %>
 
@@ -193,7 +193,7 @@
     </div>
     <% }
 
-    ;
+        ;
     %>
     <div class="ui statistic">
         <div class="value">
@@ -202,21 +202,24 @@
         <div class="label">
             Results
         </div>
-        <%
-            if (pagenumber > 30) {
-        %>
-        <div class="text">
-            Too much results that only show six pages
-        </div>
-        <% }%>
     </div>
-
 </div>
+
+<%
+    if (lp2.size() > 30) {
+%>
+<div class="container">
+    <div class="ui two column grid centered">
+        <div class="text" style="color: #919191">
+            Too much results, only first six pages are displayed.
+        </div>
+    </div>
+</div>
+<br>
+<% }%>
 
 
 <br>
-
-
 <%
     if (lp2.size() == 0) {
 %>
@@ -251,11 +254,12 @@
                     <p><%=lp2.get(i).getDate()%>
                     </p>
                     <a class="ui violet right ribbon label">Abstract: </a>
-                    <p><%=lp2.get(i).getHighlight()%>
-                    </p>
+                    <div><%=lp2.get(i).getHighlight()%>
+                    </div>
                 </div>
             </div>
         </div>
+
         <br><br>
 
             <% }%>
@@ -263,29 +267,52 @@
 
         <div class="ui grid centered">
             <div class="ui pagination menu">
-                <a class="item" href="<%=request.getContextPath()%>/servlets/searchs?keyword=<%=keyword2%>">
-                    1
+                <%
+                    int pagen = ((list2.getPage() - 1) / 5) + 1;
+                    int pageAll = list2.getAllPage();
+                    if (pageAll >= pagen * 5) {
+                        if (list2.getPage() >= 6) {
+
+                %>
+                <a class="item"
+                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=(pagen-1)*5%>">
+                    <<
                 </a>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=2">
-                    2
+                <% }
+                    for (int jj = (pagen - 1) * 5 + 1; jj <= pagen * 5; jj++) {
+                %>
+                <a class="item"
+                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
+                    <%=jj %>
                 </a>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=3">
-                    3
+                <% }
+                    if (pagen * 5 < pageAll) {
+                %>
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=pagen*5+1%>">
+                    >>
                 </a>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=4">
-                    4
+                <%
+                    }
+                } else {
+                    if (list2.getPage() >= 6) {
+
+                %>
+                <a class="item"
+                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=(pagen-1)*5%>">
+                    <<
                 </a>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=5">
-                    5
+                <% }
+                    for (int jj = (pagen - 1) * 5 + 1; jj <= pageAll; jj++) {
+                %>
+                <a class="item"
+                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
+                    <%=jj %>
                 </a>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=6">
-                    6
-                </a>
-                <a class="disabled item">
-                    ...
-                </a>
+                <% }
+                } %>
             </div>
         </div>
+
 
         <br><br><br><br><br>
 
@@ -303,8 +330,8 @@
                             </div>
                         </div>
                         <%--<div class="seven wide column">--%>
-                            <%--<h4 class="ui inverted header">Source Code</h4>--%>
-                            <%--&lt;%&ndash;<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>&ndash;%&gt;--%>
+                        <%--<h4 class="ui inverted header">Source Code</h4>--%>
+                        <%--&lt;%&ndash;<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>&ndash;%&gt;--%>
                         <%--</div>--%>
                     </div>
                 </div>

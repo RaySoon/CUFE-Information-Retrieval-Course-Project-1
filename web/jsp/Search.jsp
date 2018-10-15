@@ -1,4 +1,6 @@
-<%--
+<%@ page import="test1.SearchFiles" %>
+<%@ page import="test2.fileeach" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: alexsun
   Date: 2018/10/12
@@ -114,7 +116,7 @@
             display: none;
         }
 
-        .header{
+        .header {
             user-select: none;
         }
 
@@ -165,11 +167,11 @@
 
     <div class="ui large top menu">
         <div class="ui container">
-            <a class="item" href="../index.jsp">Home</a>
-            <a class="active item" href="Search.jsp">Search</a>
-            <a class="item" href="Tasks.jsp">Tasks</a>
+            <a class="item" href="<%=request.getContextPath()%>/index.jsp">Home</a>
+            <a class="active item" href="<%=request.getContextPath()%>/jsp/Search.jsp">Search</a>
+            <a class="item" href="<%=request.getContextPath()%>/jsp/Tasks.jsp">Tasks</a>
             <div class="right menu">
-                <a class="item" href="Members.jsp">Members</a>
+                <a class="item" href="<%=request.getContextPath()%>/jsp/Members.jsp">Members</a>
             </div>
         </div>
     </div>
@@ -224,8 +226,6 @@
         </div>
     </div>
 </div>
-
-
 <br><br><br><br><br><br><br><br><br><br><br>
 
 <div class="pusher">
@@ -235,15 +235,15 @@
                 <div class="five wide column">
                     <h4 class="ui inverted header">About</h4>
                     <div class="ui inverted link list">
-                        <a href="Members.jsp" class="item">About Us</a>
+                        <a href="<%=request.getContextPath()%>/jsp/Members.jsp" class="item">About Us</a>
                         <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" class="item">About This
                             Course</a>
                         <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                     </div>
                 </div>
                 <%--<div class="seven wide column">--%>
-                    <%--<h4 class="ui inverted header">Source Code</h4>--%>
-                    <%--&lt;%&ndash;<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>&ndash;%&gt;--%>
+                <%--<h4 class="ui inverted header">Source Code</h4>--%>
+                <%--&lt;%&ndash;<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>&ndash;%&gt;--%>
                 <%--</div>--%>
             </div>
         </div>

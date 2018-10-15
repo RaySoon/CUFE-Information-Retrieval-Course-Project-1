@@ -1,7 +1,7 @@
 <head>
     <!-- Standard Meta -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
@@ -34,18 +34,22 @@
             min-height: 700px;
             padding: 1em 0em;
         }
+
         .masthead .logo.item img {
             margin-right: 1em;
         }
+
         .masthead .ui.menu .ui.button {
             margin-left: 0.5em;
         }
+
         .masthead h1.ui.header {
             margin-top: 3em;
             margin-bottom: 0em;
             font-size: 4em;
             font-weight: normal;
         }
+
         .masthead h2 {
             font-size: 1.7em;
             font-weight: normal;
@@ -54,19 +58,24 @@
         .ui.vertical.stripe {
             padding: 8em 0em;
         }
+
         .ui.vertical.stripe h3 {
             font-size: 2em;
         }
+
         .ui.vertical.stripe .button + h3,
         .ui.vertical.stripe p + h3 {
             margin-top: 3em;
         }
+
         .ui.vertical.stripe .floated.image {
             clear: both;
         }
+
         .ui.vertical.stripe p {
             font-size: 1.33em;
         }
+
         .ui.vertical.stripe .horizontal.divider {
             margin: 3em 0em;
         }
@@ -74,6 +83,7 @@
         .quote.stripe.segment {
             padding: 0em;
         }
+
         .quote.stripe.segment .grid .column {
             padding-top: 5em;
             padding-bottom: 5em;
@@ -91,20 +101,25 @@
             .ui.fixed.menu {
                 display: none !important;
             }
+
             .secondary.pointing.menu .item,
             .secondary.pointing.menu .menu {
                 display: none;
             }
+
             .secondary.pointing.menu .toc.item {
                 display: block;
             }
+
             .masthead.segment {
                 min-height: 350px;
             }
+
             .masthead h1.ui.header {
                 font-size: 2em;
                 margin-top: 1.5em;
             }
+
             .masthead h2 {
                 margin-top: 0.5em;
                 font-size: 1.5em;
@@ -120,16 +135,16 @@
     <script src="semantic/dist/components/transition.js"></script>
     <script>
         $(document)
-            .ready(function() {
+            .ready(function () {
 
                 // fix menu when passed
                 $('.masthead')
                     .visibility({
                         once: false,
-                        onBottomPassed: function() {
+                        onBottomPassed: function () {
                             $('.fixed.menu').transition('fade in');
                         },
-                        onBottomPassedReverse: function() {
+                        onBottomPassedReverse: function () {
                             $('.fixed.menu').transition('fade out');
                         }
                     })
@@ -196,7 +211,7 @@
         <div class="ui middle aligned stackable grid container">
             <div class="row">
                 <div class="eight wide column">
-                    <h3 class="ui header">More Easily to Use</h3>
+                    <h3 class="ui header">More Elaborate to Use</h3>
                     <p>Everything is intuitive.</p>
                     <h3 class="ui header">More Accurate Result</h3>
                     <p>We calibrated the information as much as possible.</p>
@@ -213,13 +228,17 @@
     <div class="ui vertical stripe segment">
         <div class="ui text container">
             <h3 class="ui header">Tutorial of Grobid</h3>
-            <p>GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured TEI-encoded documents with a particular focus on technical and scientific publications. </p>
+            <p>GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF
+                into structured TEI-encoded documents with a particular focus on technical and scientific
+                publications. </p>
             <a class="ui large button" href="https://mp.weixin.qq.com/s/WM3PFm2g0IfNmV8DyBHnHg">Read More</a>
             <h4 class="ui horizontal header divider">
                 <a href="#">tutorial</a>
             </h4>
             <h3 class="ui header">Tutorial of Lucene</h3>
-            <p>Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.</p>
+            <p>Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java.
+                It is a technology suitable for nearly any application that requires full-text search, especially
+                cross-platform.</p>
             <a class="ui large button" href="https://mp.weixin.qq.com/s/j3gn49jFTVAxouE6UH2r5g">Read More</a>
         </div>
     </div>
@@ -232,14 +251,16 @@
                     <h4 class="ui inverted header">About</h4>
                     <div class="ui inverted link list">
                         <a href="jsp/Members.jsp" class="item">About Us</a>
-                        <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" class="item">About This Course</a>
+                        <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" class="item">About This
+                            Course</a>
                         <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                     </div>
                 </div>
-                <div class="seven wide column">
-                    <h4 class="ui inverted header">Source Code</h4>
-                <%--<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>--%>
-                </div>
+                <%--<div class="seven wide column">--%>
+                    <%--<h4 class="ui inverted header">Source Code</h4>--%>
+                    <%--<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub--%>
+                        <%--Link</a>--%>
+                <%--</div>--%>
             </div>
         </div>
     </div>

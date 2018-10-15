@@ -244,10 +244,10 @@
                         <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                     </div>
                 </div>
-                <div class="seven wide column">
-                    <h4 class="ui inverted header">Source Code</h4>
-                    <%--<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>--%>
-                </div>
+                <%--<div class="seven wide column">--%>
+                    <%--<h4 class="ui inverted header">Source Code</h4>--%>
+                    <%--&lt;%&ndash;<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>&ndash;%&gt;--%>
+                <%--</div>--%>
             </div>
         </div>
     </div>

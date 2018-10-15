@@ -174,9 +174,6 @@
 
 <br>
 
-<%--<div class="ui sizer vertical segment">--%>
-<%--<div class="ui huge right aligned header">巨型标题</div>--%>
-<%--</div>--%>
 <div class="header">
     <%
         for (int space = 0; space < 8; space++) {
@@ -197,23 +194,13 @@
         <div class="label">
             Results
         </div>
-        <%
-            if (lp2.size() > 30) {
-        %>
-        <div class="text">
-            Too much results that only show six pages
-        </div>
-        <% }%>
     </div>
-
 </div>
 
 
 <br>
-
-
 <%
-    if (lp2.size() == 0) {
+    if (lp2.size() == 0 && keyword2 !=null) {
 %>
 <br><br><br><br><br>
 <div class="container">
@@ -223,7 +210,7 @@
         </div>
     </div>
 </div>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 <% }%>
 
 
@@ -248,8 +235,8 @@
                 <p><%=lp2.get(i).getDate()%>
                 </p>
                 <a class="ui violet right ribbon label">Abstract: </a>
-                <p><%=lp2.get(i).getHighlight()%>
-                </p>
+                <div><%=lp2.get(i).getHighlight()%>
+                </div>
             </div>
         </div>
     </div>
@@ -295,27 +282,40 @@
 
         <div class="ui grid centered">
             <div class="ui pagination menu">
-                <a class="active item" href="<%=request.getContextPath()%>/servlets/searchs?keyword=<%=keyword2%>">
-                    1
+
+                <%
+
+                int pagen=lp2.size();
+                int yvshu=pagen%5;
+                int yv=0;
+                if(yvshu>0)yv=1;
+                int allpagenumber=pagen/5+yv;
+                if(pagen<=25){
+                for(int jj=1;jj<=allpagenumber;jj++){
+                %>
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
+                    <%=jj%>
                 </a>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=2">
-                    2
+
+                <%
+                        }
+                }
+                else {
+                    for(int jj=1;jj<=5;jj++){
+                %>
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
+                    <%=jj%>
                 </a>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=3">
-                    3
-                </a>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=4">
-                    4
-                </a>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=5">
-                    5
-                </a>
+
+
+                <% }%>
+
                 <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=6">
-                    6
+                    >>
                 </a>
-                <a class="disabled item">
-                    ...
-                </a>
+
+                <%
+                } %>
             </div>
         </div>
             <% }%>
@@ -336,10 +336,10 @@
                                 <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                             </div>
                         </div>
-                        <div class="seven wide column">
-                            <h4 class="ui inverted header">Source Code</h4>
-                            <%--<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>--%>
-                        </div>
+                        <%--<div class="seven wide column">--%>
+                            <%--<h4 class="ui inverted header">Source Code</h4>--%>
+                            <%--&lt;%&ndash;<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>&ndash;%&gt;--%>
+                        <%--</div>--%>
                     </div>
                 </div>
             </div>

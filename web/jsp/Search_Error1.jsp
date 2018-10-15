@@ -1,12 +1,19 @@
-<%--
+<%@ page import="test1.SearchFiles" %>
+<%@ page import="test2.fileeach" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: alexsun
   Date: 2018/10/12
-  Time: 上午12:02
+  Time: 下午2:18
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<html>
+
+
 <head>
-    <!-- Standard Meta -->
+    <title>Search</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -21,7 +28,10 @@
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/header.css">
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/image.css">
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/menu.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/card.css">
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/search.css">
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/input.css">
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/statistic.css">
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/label.css">
 
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/divider.css">
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/dropdown.css">
@@ -106,6 +116,10 @@
             display: none;
         }
 
+        .header {
+            user-select: none;
+        }
+
         @media only screen and (max-width: 700px) {
             .ui.fixed.menu {
                 display: none !important;
@@ -133,16 +147,19 @@
                 margin-top: 0.5em;
                 font-size: 1.5em;
             }
+
         }
 
 
     </style>
-
     <script src="../js/jQuery.min.js"></script>
     <script src="../semantic/dist/components/visibility.js"></script>
     <script src="../semantic/dist/components/sidebar.js"></script>
     <script src="../semantic/dist/components/transition.js"></script>
+
 </head>
+
+
 <body>
 
 
@@ -150,67 +167,79 @@
 
     <div class="ui large top menu">
         <div class="ui container">
-            <a class="item" href="../index.jsp">Home</a>
-            <a class="item" href="Search.jsp">Search</a>
-            <a class="active item" href="Tasks.jsp">Tasks</a>
+            <a class="item" href="<%=request.getContextPath()%>/index.jsp">Home</a>
+            <a class="active item" href="<%=request.getContextPath()%>/jsp/Search.jsp">Search</a>
+            <a class="item" href="<%=request.getContextPath()%>/jsp/Tasks.jsp">Tasks</a>
             <div class="right menu">
-                <a class="item" href="Members.jsp">Members</a>
+                <a class="item" href="<%=request.getContextPath()%>/jsp/Members.jsp">Members</a>
             </div>
         </div>
     </div>
 </div>
-<div class="main ui container">
-    <br>
-    <h1 class="ui dividing header">Tasks:&nbsp;&nbsp;Scholarly Documents Parse and Search</h1>
-    <br>
-    <h3>TASK 1: Parse Metadata & Text form PDFs </h3>
-    <p>
-        Extract metadata, such as title, authors and pages from 1000 papers in PDF format.<br/>
-        The machine learning software <a href="http://grobid.github.io/">Grobid</a> is recommended for this task.<br/>
-        It can be used to extract fulltext & metadata info from scholarly documents and the results are saved in xml
-        files.<br/>
-    </p>
-    <div class="ui label">
-        <i class="alarm icon"></i> Hints
+
+<br>
+
+<div class="header">
+    <%
+        for (int space = 0; space < 8; space++) {
+    %>
+    <div class="ui statistic">
+        <div class="value" style="color: rgba(0,0,0,0)">
+            000
+        </div>
+        <div class="label" style="color: rgba(0,0,0,0)">
+            space
+        </div>
     </div>
-    <p>
-        *1000 PDFs(2.61G) can be downloaded <a href="http://miner.picp.net/members/Yan/teaching/download/IR2016Spring/IR/oriPDFs.zip">here</a>.<br/>
-        *Here is the <a href="http://grobid.readthedocs.io/en/latest/">Grobid Tutorial</a> or you can search grobid on
-        GitHub for more information by yourself.<br/>
-    </p>
-    <div class="ui divider"></div>
-    <h3>TASK 2: Index & Search the Parsed Metadata from Grobid</h3>
-    <p>
-        Build the inverted index with the information you have got in the Task 1.<br/>
-        The index should includes at least the following fields: title, authors, date, affiliation, address and
-        fulltext.<br/>
-        Write codes to search different fields with queries, e.g. search the word 'computer' in the field 'title'.<br/>
-    </p>
-    <div class="ui label">
-        <i class="alarm icon"></i> Hints
+    <% }%>
+    <div class="ui statistic">
+        <div class="value">
+            900+
+        </div>
+        <div class="label">
+            Papers included
+        </div>
     </div>
-    <p>
-        *The java-based tool <a href="http://lucene.apache.org/">Lucene</a> is recommended to build & search the index.
-    </p>
-    <div class="ui divider"></div>
-    <h3>TASK 3: Build a Simple Web Search Engine with the Index</h3>
-    <p>
-        Implement a simple web search interface to show your search result. <br/>
-        The small search engine should at least provide the users with a list of results after
-        a query is submitted and more functions can be added into the website as you like.<br/>
-    </p>
-    <div class="ui label">
-        <i class="alarm icon"></i> Hints
-    </div>
-    <p>
-        *The back-end of the website can be Implemented with IIS+PHP or Tomcat+J2EE+JSP.<br/>
-        *The front-end can be realized by HTML5+CSS+JS. Also, there are many popular front-end framework,
-        such as <a href="http://www.bootcss.com/">bootstrap</a> and <a
-            href="http://www.foundcss.com/">Foundation</a>.<br/>
-        *For more website construction tutorial, you can refer to <a href="http://www.w3school.com.cn/">w3cshool</a>.
-    </p>
-    <br><br>
 </div>
+
+<br><br><br><br>
+
+<div class="ui container">
+    <img class="ui centered large image" src="../photos/logo.png">
+</div>
+
+<br><br>
+
+<div class="ui container center aligned">
+    <form role="form" action="../servlets/searchs" method="get">
+        <div class="ui massive icon input">
+            <input type="text" placeholder="Search Papers..." name="keywords"/>
+            <i class="disabled search icon"></i>
+        </div>
+    </form>
+</div>
+<br>
+<div class="container">
+    <div class="ui two column grid centered">
+        <div class="text" style="color: #919191">
+            Press <i>Enter</i> to Start Searching
+        </div>
+    </div>
+</div>
+<br><br>
+
+<div class="container">
+    <div class="ui two column grid centered">
+        <div class="text" style="color: red">
+            The keyword of searching cannot be less than 3 words.
+        </div>
+    </div>
+</div>
+<br>
+
+
+
+<br><br><br><br><br><br><br><br><br>
 
 <div class="pusher">
     <div class="ui inverted vertical footer segment">
@@ -219,22 +248,20 @@
                 <div class="five wide column">
                     <h4 class="ui inverted header">About</h4>
                     <div class="ui inverted link list">
-                        <a href="Members.jsp" class="item">About Us</a>
+                        <a href="<%=request.getContextPath()%>/jsp/Members.jsp" class="item">About Us</a>
                         <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" class="item">About This
                             Course</a>
                         <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                     </div>
                 </div>
                 <%--<div class="seven wide column">--%>
-                    <%--<h4 class="ui inverted header">Source Code</h4>--%>
-                    <%--&lt;%&ndash;<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>&ndash;%&gt;--%>
+                <%--<h4 class="ui inverted header">Source Code</h4>--%>
+                <%--&lt;%&ndash;<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>&ndash;%&gt;--%>
                 <%--</div>--%>
             </div>
         </div>
     </div>
 </div>
 
-
 </body>
-
-
+</html>

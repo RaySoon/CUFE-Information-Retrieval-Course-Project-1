@@ -8,6 +8,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@page import="test1.SearchFiles" %>
 <%@ page import="test2.fileeach" %>
+<%@ page import="test2.listlala" %>
 <%@ page import="org.apache.lucene.search.highlight.Scorer" %>
 <head>
     <!-- Standard Meta -->
@@ -155,8 +156,9 @@
 <body>
 <%
     String keyword2 = (String) request.getAttribute("keyword1");
-    request.setAttribute("keyword1", keyword2);
-    ArrayList<fileeach> lp2 = SearchFiles.indexSearch(keyword2);
+    listlala list2 = (listlala) request.getAttribute("listAll2");
+    int pagenumber=(int)request.getAttribute("pagesize2");
+    ArrayList<fileeach> lp2 = list2.getContent();
 %>
 
 <div class="container">
@@ -174,6 +176,9 @@
 
 <br>
 
+<%--<div class="ui sizer vertical segment">--%>
+<%--<div class="ui huge right aligned header">巨型标题</div>--%>
+<%--</div>--%>
 <div class="header">
     <%
         for (int space = 0; space < 8; space++) {
@@ -186,10 +191,13 @@
             space
         </div>
     </div>
-    <% }%>
+    <% }
+
+    ;
+    %>
     <div class="ui statistic">
         <div class="value">
-            <%=lp2.size()%>
+            <%=pagenumber%>
         </div>
         <div class="label">
             Results
@@ -197,10 +205,23 @@
     </div>
 </div>
 
+<%
+    if (lp2.size() > 30) {
+%>
+<div class="container">
+    <div class="ui two column grid centered">
+        <div class="text" style="color: #919191">
+            Too much results, only first six pages are displayed.
+        </div>
+    </div>
+</div>
+<br>
+<% }%>
+
 
 <br>
 <%
-    if (lp2.size() == 0 && keyword2 !=null) {
+    if (lp2.size() == 0) {
 %>
 <br><br><br><br><br>
 <div class="container">
@@ -209,116 +230,66 @@
             There is no result for searching <%=keyword2%>.
         </div>
     </div>
-</div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<% }%>
+    <br><br><br><br><br><br><br><br>
+        <% }%>
 
 
-<%
-    if (lp2.size() <= 5) {
-        for (int i = 0; i < lp2.size(); i++) {
+        <%
+    for(int i = 0; i < lp2.size(); i ++){
 %>
-<div class="container">
-    <div class="ui two column grid centered">
-        <div class="column">
-            <div class="ui raised segment">
-                <a class="ui red ribbon label">Title:</a>
-                <p><%=lp2.get(i).getTitle()%>
-                </p>
-                <a class="ui orange ribbon label">Authors: </a>
-                <p><%=lp2.get(i).getAuthor()%>
-                </p>
-                <a class="ui teal ribbon label">Pages: </a>
-                <p><%=lp2.get(i).getPage()%>
-                </p>
-                <a class="ui blue ribbon label">Year: </a>
-                <p><%=lp2.get(i).getDate()%>
-                </p>
-                <a class="ui violet right ribbon label">Abstract: </a>
-                <div><%=lp2.get(i).getHighlight()%>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br><br>
-
-        <% }
-} else {
-
-    for (int j = 0; j < 5; j++) {
-
-%>
-
     <div class="container">
         <div class="ui two column grid centered">
             <div class="column">
                 <div class="ui raised segment">
                     <a class="ui red ribbon label">Title:</a>
-                    <p><%=lp2.get(j).getTitle()%>
+                    <p><%=lp2.get(i).getTitle()%>
                     </p>
                     <a class="ui orange ribbon label">Authors: </a>
-                    <p><%=lp2.get(j).getAuthor()%>
+                    <p><%=lp2.get(i).getAuthor()%>
                     </p>
                     <a class="ui teal ribbon label">Pages: </a>
-                    <p><%=lp2.get(j).getPage()%>
+                    <p><%=lp2.get(i).getPage()%>
                     </p>
                     <a class="ui blue ribbon label">Year: </a>
-                    <p><%=lp2.get(j).getDate()%>
+                    <p><%=lp2.get(i).getDate()%>
                     </p>
                     <a class="ui violet right ribbon label">Abstract: </a>
-                    <div><%=lp2.get(j).getHighlight()%>
+                    <div><%=lp2.get(i).getHighlight()%>
                     </div>
                 </div>
             </div>
         </div>
+
         <br><br>
-            <% } } %>
 
-        <br><br><br>
+            <% }%>
 
-            <%
-    if (lp2.size() > 5) {
-%>
 
         <div class="ui grid centered">
             <div class="ui pagination menu">
-
-                <%
-
-                int pagen=lp2.size();
-                int yvshu=pagen%5;
-                int yv=0;
-                if(yvshu>0)yv=1;
-                int allpagenumber=pagen/5+yv;
-                if(pagen<=25){
-                for(int jj=1;jj<=allpagenumber;jj++){
-                %>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
-                    <%=jj%>
+                <a class="item" href="<%=request.getContextPath()%>/servlets/searchs?keyword=<%=keyword2%>">
+                    1
                 </a>
-
-                <%
-                        }
-                }
-                else {
-                    for(int jj=1;jj<=5;jj++){
-                %>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
-                    <%=jj%>
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=2">
+                    2
                 </a>
-
-
-                <% }%>
-
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=3">
+                    3
+                </a>
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=4">
+                    4
+                </a>
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=5">
+                    5
+                </a>
                 <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=6">
-                    >>
+                    6
                 </a>
-
-                <%
-                } %>
+                <a class="disabled item">
+                    ...
+                </a>
             </div>
         </div>
-            <% }%>
 
         <br><br><br><br><br>
 
@@ -331,8 +302,7 @@
                             <div class="ui inverted link list">
                                 <a href="<%=request.getContextPath()%>/jsp/Members.jsp" class="item">About Us</a>
                                 <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" class="item">About
-                                    This
-                                    Course</a>
+                                    This Course</a>
                                 <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                             </div>
                         </div>
