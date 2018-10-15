@@ -211,7 +211,7 @@
         <div class="ui middle aligned stackable grid container">
             <div class="row">
                 <div class="eight wide column">
-                    <h3 class="ui header">More Elaborate to Use</h3>
+                    <h3 class="ui header">More Easy to Use</h3>
                     <p>Everything is intuitive.</p>
                     <h3 class="ui header">More Accurate Result</h3>
                     <p>We calibrated the information as much as possible.</p>
