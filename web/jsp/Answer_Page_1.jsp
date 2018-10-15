@@ -16,26 +16,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
-    <title>Tasks</title>
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/site.css">
+    <title>Answer</title>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/site.css">
 
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/container.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/header.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/image.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/menu.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/label.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/statistic.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/container.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/header.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/image.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/menu.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/label.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/statistic.css">
 
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/button.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/list.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/button.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/list.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/components/transition.css">
 
 
     <style type="text/css">
@@ -147,10 +147,10 @@
 
     </style>
 
-    <script src="../js/jQuery.min.js"></script>
-    <script src="../semantic/dist/components/visibility.js"></script>
-    <script src="../semantic/dist/components/sidebar.js"></script>
-    <script src="../semantic/dist/components/transition.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jQuery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/semantic/dist/components/visibility.js"></script>
+    <script src="<%=request.getContextPath()%>/semantic/dist/components/sidebar.js"></script>
+    <script src="<%=request.getContextPath()%>/semantic/dist/components/transition.js"></script>
 </head>
 <body>
 <%
@@ -162,11 +162,11 @@
 <div class="container">
     <div class="ui large top menu">
         <div class="ui container">
-            <a class="item" href="../index.jsp">Home</a>
-            <a class="item" href="../jsp/Search.jsp">Search</a>
-            <a class="item" href="../jsp/Tasks.jsp">Tasks</a>
+            <a class="item" href="<%=request.getContextPath()%>/index.jsp">Home</a>
+            <a class="item" href="<%=request.getContextPath()%>/jsp/Search.jsp">Search</a>
+            <a class="item" href="<%=request.getContextPath()%>/jsp/Tasks.jsp">Tasks</a>
             <div class="right menu">
-                <a class="item" href="../jsp/Members.jsp">Members</a>
+                <a class="item" href="<%=request.getContextPath()%>/jsp/Members.jsp">Members</a>
             </div>
         </div>
     </div>
@@ -279,8 +279,8 @@
                     <p><%=lp2.get(j).getDate()%>
                     </p>
                     <a class="ui violet right ribbon label">Abstract: </a>
-                    <p><%=lp2.get(j).getHighlight()%>
-                    </p>
+                    <div><%=lp2.get(j).getHighlight()%>
+                    </div>
                 </div>
             </div>
         </div>
@@ -295,22 +295,22 @@
 
         <div class="ui grid centered">
             <div class="ui pagination menu">
-                <a class="active item" href="/search2?keyword=<%=keyword2%>&page=1">
+                <a class="active item" href="<%=request.getContextPath()%>/servlets/searchs?keyword=<%=keyword2%>">
                     1
                 </a>
-                <a class="item" href="/search2?keyword=<%=keyword2%>&page=2">
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=2">
                     2
                 </a>
-                <a class="item" href="/search2?keyword=<%=keyword2%>&page=3">
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=3">
                     3
                 </a>
-                <a class="item" href="/search2?keyword=<%=keyword2%>&page=4">
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=4">
                     4
                 </a>
-                <a class="item" href="/search2?keyword=<%=keyword2%>&page=5">
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=5">
                     5
                 </a>
-                <a class="item" href="/search2?keyword=<%=keyword2%>&page=6">
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=6">
                     6
                 </a>
                 <a class="disabled item">
@@ -329,17 +329,17 @@
                         <div class="five wide column">
                             <h4 class="ui inverted header">About</h4>
                             <div class="ui inverted link list">
-                                <a href="Members.jsp" class="item">About Us</a>
-                                <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.jsp" class="item">About
+                                <a href="<%=request.getContextPath()%>/jsp/Members.jsp" class="item">About Us</a>
+                                <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" class="item">About
                                     This
                                     Course</a>
                                 <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                             </div>
                         </div>
-                        <div class="seven wide column">
-                            <h4 class="ui inverted header">Source Code</h4>
-                            <%--<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>--%>
-                        </div>
+                        <%--<div class="seven wide column">--%>
+                            <%--<h4 class="ui inverted header">Source Code</h4>--%>
+                            <%--&lt;%&ndash;<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>&ndash;%&gt;--%>
+                        <%--</div>--%>
                     </div>
                 </div>
             </div>

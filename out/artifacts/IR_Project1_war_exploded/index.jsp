@@ -232,13 +232,13 @@
                     <h4 class="ui inverted header">About</h4>
                     <div class="ui inverted link list">
                         <a href="jsp/Members.jsp" class="item">About Us</a>
-                        <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.jsp" class="item">About This Course</a>
+                        <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" class="item">About This Course</a>
                         <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                     </div>
                 </div>
                 <div class="seven wide column">
                     <h4 class="ui inverted header">Source Code</h4>
-                    <%--<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>--%>
+                <%--<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub Link</a>--%>
                 </div>
             </div>
         </div>

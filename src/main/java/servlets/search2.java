@@ -61,7 +61,7 @@ public class search2 extends HttpServlet {
 
             }
 
-
+            request.setAttribute("pagesize2",lp3.size());
             request.setAttribute("listAll2",listAll);
             request.getRequestDispatcher("/jsp/Answer_Page_2.jsp").forward(request,response);
         }

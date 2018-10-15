@@ -75,7 +75,7 @@ public static ArrayList<fileeach> indexSearch(String keywords){
         try{
         	
 //            1、创建Directory
-             FSDirectory directory = FSDirectory.open(Paths.get("/Users/alexsun/IdeaProjects/Information_Retrieval/IR_Project1/web/index"));//在硬盘上生成Directory
+             FSDirectory directory = FSDirectory.open(Paths.get("E:\\server\\apache-tomcat-9.0.12\\webapps\\IR_Project1\\index"));//在硬盘上生成Directory
 //            2、创建IndexReader
               IndexReader reader = DirectoryReader.open(directory);
 //            3、根据IndexWriter创建IndexSearcher
@@ -121,7 +121,7 @@ public static ArrayList<fileeach> indexSearch(String keywords){
 
                  //高亮
                  String text1= d.get("fulltext");
-                 SimpleHTMLFormatter simpleHTMLFormatter=new SimpleHTMLFormatter("<span style=\"color:red;font-weight: bold\">", "</span>");
+                 SimpleHTMLFormatter simpleHTMLFormatter=new SimpleHTMLFormatter("<b><i>", "</i></b>");
                  Highlighter highlighter=new Highlighter(simpleHTMLFormatter,new QueryScorer(query));
                  highlighter.setTextFragmenter(new SimpleFragmenter(500));
                  if (text1!= null) {
@@ -173,7 +173,7 @@ public static String indexSearch2(String keywords,String returnfile){
         try{
         	
 //            1、创建Directory
-             FSDirectory directory = FSDirectory.open(Paths.get("/Users/alexsun/IdeaProjects/Information_Retrieval/IR_Project1/web/index"));//在硬盘上生成Directory
+             FSDirectory directory = FSDirectory.open(Paths.get("E:\\server\\apache-tomcat-9.0.12\\webapps\\IR_Project1\\index"));//在硬盘上生成Directory
 //            2、创建IndexReader
               IndexReader reader = DirectoryReader.open(directory);
 //            3、根据IndexWriter创建IndexSearcher

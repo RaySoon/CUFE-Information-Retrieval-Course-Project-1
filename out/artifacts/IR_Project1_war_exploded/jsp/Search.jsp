@@ -200,13 +200,19 @@
     </div>
 </div>
 
-<br><br><br><br><br><br>
+<br><br><br><br>
+
+<div class="ui container">
+    <img class="ui centered large image" src="../photos/logo.png">
+</div>
+
+<br><br>
 
 <div class="ui container center aligned">
     <form role="form" action="../servlets/searchs" method="get">
         <div class="ui massive icon input">
             <input type="text" placeholder="Search Papers..." name="keywords"/>
-            <i class="search icon"></i>
+            <i class="disabled search icon"></i>
         </div>
     </form>
 </div>
@@ -230,7 +236,7 @@
                     <h4 class="ui inverted header">About</h4>
                     <div class="ui inverted link list">
                         <a href="Members.jsp" class="item">About Us</a>
-                        <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.jsp" class="item">About This
+                        <a href="http://miner.picp.net/members/Yan/teaching/IR2016Spring.html" class="item">About This
                             Course</a>
                         <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                     </div>
