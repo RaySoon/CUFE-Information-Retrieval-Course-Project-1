@@ -31,16 +31,6 @@ public class searchs extends javax.servlet.http.HttpServlet {
             request.setAttribute("keyword1", keyword);
             request.getRequestDispatcher("../jsp/Answer_Page_1.jsp").forward(request, response);
         }
-        //ArrayList<fileeach> filelist2 = SearchFiles.indexSearch(keyword);
-
-//        ArrayList<fileeach> ooo=SearchFiles.indexSearch("reference");
-//        for(int i=0;i<ooo.size();i++){
-//
-//            System.out.println(ooo.get(i).getTitle());
-//            System.out.println(ooo.get(i).getAuthor());
-//            System.out.println(ooo.get(i).getFulltext());
-//            System.out.println("*****************************");
-//        }
         System.out.println(keyword);
     }
 }
