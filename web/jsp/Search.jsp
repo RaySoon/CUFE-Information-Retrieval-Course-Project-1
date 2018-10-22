@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/input.css">
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/statistic.css">
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/label.css">
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/menu.css">
 
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/divider.css">
     <link rel="stylesheet" type="text/css" href="../semantic/dist/components/dropdown.css">
@@ -152,7 +153,7 @@
 
 
     </style>
-    <script src="../js/jQuery.min.js"></script>
+    <script src="../js/jQuery-3.3.1.js"></script>
     <script src="../semantic/dist/components/visibility.js"></script>
     <script src="../semantic/dist/components/sidebar.js"></script>
     <script src="../semantic/dist/components/transition.js"></script>
@@ -214,8 +215,15 @@
     <form role="form" action="../servlets/searchs" method="get">
         <div class="ui massive icon input">
             <input type="text" placeholder="Search Papers..." name="keywords"/>
-            <i class="disabled search icon"></i>
+            <select name="type1">
+                <option value="fulltext">fulltext</option>
+                <option value="title">title</option>
+                <option value="author">author</option>
+            </select>
+            <%--<i class="disabled search icon"></i>--%>
         </div>
+
+
     </form>
 </div>
 <br>

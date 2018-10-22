@@ -21,8 +21,9 @@ public class search2 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String keyword=request.getParameter("keyword");
         String page=request.getParameter("page");
+        String type=request.getParameter("type");
         System.out.println(keyword);
-        ArrayList<fileeach> lp3= SearchFiles.indexSearch(keyword);
+        ArrayList<fileeach> lp3= SearchFiles.indexSearch(keyword,type);
         int yvshu=lp3.size()%5;
         int yv=0;
         if(yvshu>0)yv=1;
@@ -38,6 +39,7 @@ public class search2 extends HttpServlet {
         if(page2<=allpagenumber&&page2>0){
             request.setAttribute("keyword1",keyword);
             request.setAttribute("page1",page);
+            request.setAttribute("type1",type);
             listlala listAll=new listlala();
             listAll.setPage(page2);
             listAll.setAllPage(allpagenumber);

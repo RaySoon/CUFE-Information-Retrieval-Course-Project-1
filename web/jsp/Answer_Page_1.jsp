@@ -156,7 +156,9 @@
 <%
     String keyword2 = (String) request.getAttribute("keyword1");
     request.setAttribute("keyword1", keyword2);
-    ArrayList<fileeach> lp2 = SearchFiles.indexSearch(keyword2);
+    String type2 = (String) request.getAttribute("type1");
+    request.setAttribute("type1", type2);
+    ArrayList<fileeach> lp2 = SearchFiles.indexSearch(keyword2,type2);
 %>
 
 <div class="container">
@@ -223,7 +225,11 @@
         <div class="column">
             <div class="ui raised segment">
                 <a class="ui red ribbon label">Title:</a>
-                <p><%=lp2.get(i).getTitle()%>
+                <p>
+                    <%=lp2.get(i).getTitle()%>
+                    <sup>
+                        <a href = "<%=request.getContextPath()%>/data/<%=SearchFiles.realPath(lp2.get(i).getFilepath())%>">[pdf]</a>
+                    </sup>
                 </p>
                 <a class="ui orange ribbon label">Authors: </a>
                 <p><%=lp2.get(i).getAuthor()%>
@@ -234,7 +240,7 @@
                 <a class="ui blue ribbon label">Year: </a>
                 <p><%=lp2.get(i).getDate()%>
                 </p>
-                <a class="ui violet right ribbon label">Abstract: </a>
+                <a class="ui violet right ribbon label">Preview: </a>
                 <div><%=lp2.get(i).getHighlight()%>
                 </div>
             </div>
@@ -254,7 +260,11 @@
             <div class="column">
                 <div class="ui raised segment">
                     <a class="ui red ribbon label">Title:</a>
-                    <p><%=lp2.get(j).getTitle()%>
+                    <p>
+                        <%=lp2.get(j).getTitle()%>
+                        <sup>
+                            <a href = "<%=request.getContextPath()%>/data/<%=SearchFiles.realPath(lp2.get(j).getFilepath())%>">[pdf]</a>
+                        </sup>
                     </p>
                     <a class="ui orange ribbon label">Authors: </a>
                     <p><%=lp2.get(j).getAuthor()%>
@@ -293,7 +303,7 @@
                 if(pagen<=25){
                 for(int jj=1;jj<=allpagenumber;jj++){
                 %>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&type=<%=type2%>&page=<%=jj %>">
                     <%=jj%>
                 </a>
 
@@ -303,14 +313,14 @@
                 else {
                     for(int jj=1;jj<=5;jj++){
                 %>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&type=<%=type2%>&page=<%=jj %>">
                     <%=jj%>
                 </a>
 
 
                 <% }%>
 
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=6">
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&type=<%=type2%>&page=6">
                     >>
                 </a>
 

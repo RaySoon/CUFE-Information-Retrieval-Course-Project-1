@@ -21,16 +21,17 @@ public class searchs extends javax.servlet.http.HttpServlet {
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String keyword = request.getParameter("keywords");
+        String type = request.getParameter("type1");
         if (!keyword.matches("[a-zA-Z\\s]+") && !keyword.equals("")) {
-            request.setAttribute("keyword1", "error2");
             request.getRequestDispatcher("../jsp/Search_Error2.jsp").forward(request, response);
         } else if (keyword.length() < 3) {
-            request.setAttribute("keyword1", "error1");
             request.getRequestDispatcher("../jsp/Search_Error1.jsp").forward(request, response);
         }else{
             request.setAttribute("keyword1", keyword);
+            request.setAttribute("type1", type);
             request.getRequestDispatcher("../jsp/Answer_Page_1.jsp").forward(request, response);
         }
         System.out.println(keyword);
+        System.out.println(type);
     }
 }

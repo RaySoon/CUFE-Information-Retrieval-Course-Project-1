@@ -156,6 +156,7 @@
 <body>
 <%
     String keyword2 = (String) request.getAttribute("keyword1");
+    String type2 = (String) request.getAttribute("type1");
     listlala list2 = (listlala) request.getAttribute("listAll2");
     int pagenumber = (int) request.getAttribute("pagesize2");
     ArrayList<fileeach> lp2 = list2.getContent();
@@ -242,7 +243,11 @@
             <div class="column">
                 <div class="ui raised segment">
                     <a class="ui red ribbon label">Title:</a>
-                    <p><%=lp2.get(i).getTitle()%>
+                    <p>
+                        <%=lp2.get(i).getTitle()%>
+                        <sup>
+                            <a href = "<%=request.getContextPath()%>/data/<%=SearchFiles.realPath(lp2.get(i).getFilepath())%>">[pdf]</a>
+                        </sup>
                     </p>
                     <a class="ui orange ribbon label">Authors: </a>
                     <p><%=lp2.get(i).getAuthor()%>
@@ -253,7 +258,7 @@
                     <a class="ui blue ribbon label">Year: </a>
                     <p><%=lp2.get(i).getDate()%>
                     </p>
-                    <a class="ui violet right ribbon label">Abstract: </a>
+                    <a class="ui violet right ribbon label">Preview: </a>
                     <div><%=lp2.get(i).getHighlight()%>
                     </div>
                 </div>
@@ -275,20 +280,20 @@
 
                 %>
                 <a class="item"
-                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=(pagen-1)*5%>">
+                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&type=<%=type2%>&page=<%=(pagen-1)*5%>">
                     <<
                 </a>
                 <% }
                     for (int jj = (pagen - 1) * 5 + 1; jj <= pagen * 5; jj++) {
                 %>
                 <a class="item"
-                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
+                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&type=<%=type2%>&page=<%=jj %>">
                     <%=jj %>
                 </a>
                 <% }
                     if (pagen * 5 < pageAll) {
                 %>
-                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=pagen*5+1%>">
+                <a class="item" href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&type=<%=type2%>&page=<%=pagen*5+1%>">
                     >>
                 </a>
                 <%
@@ -298,14 +303,14 @@
 
                 %>
                 <a class="item"
-                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=(pagen-1)*5%>">
+                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&type=<%=type2%>&page=<%=(pagen-1)*5%>">
                     <<
                 </a>
                 <% }
                     for (int jj = (pagen - 1) * 5 + 1; jj <= pageAll; jj++) {
                 %>
                 <a class="item"
-                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&page=<%=jj %>">
+                   href="<%=request.getContextPath()%>/search2?keyword=<%=keyword2%>&type=<%=type2%>&page=<%=jj %>">
                     <%=jj %>
                 </a>
                 <% }
