@@ -6,23 +6,7 @@
 
     <!-- Site Properties -->
     <title>Information Retrieval Project 1</title>
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/site.css">
-
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/container.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/header.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/image.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/menu.css">
-
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/button.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/list.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/semantic.css">
 
     <style type="text/css">
 
@@ -129,10 +113,8 @@
 
     </style>
 
-    <script src="js/jQuery.min.js"></script>
-    <script src="semantic/dist/components/visibility.js"></script>
-    <script src="semantic/dist/components/sidebar.js"></script>
-    <script src="semantic/dist/components/transition.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jQuery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/semantic/dist/semantic.js"></script>
     <script>
         $(document)
             .ready(function () {
@@ -256,11 +238,13 @@
                         <a href="http://en.cufe.edu.cn/" class="item">About CUFE</a>
                     </div>
                 </div>
-                <%--<div class="seven wide column">--%>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">Download</h4>
+                    <a href="<%=request.getContextPath()%>/Pre.pdf" class="item">Pre</a>
                     <%--<h4 class="ui inverted header">Source Code</h4>--%>
                     <%--<a href="https://github.com/RaySoon/CUFE-Information-Retrieval-Course-Project-1" class="item">GitHub--%>
                         <%--Link</a>--%>
-                <%--</div>--%>
+                </div>
             </div>
         </div>
     </div>

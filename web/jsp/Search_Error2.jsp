@@ -20,62 +20,19 @@
 
     <!-- Site Properties -->
     <title>Tasks</title>
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/site.css">
-
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/container.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/header.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/image.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/menu.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/search.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/input.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/statistic.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/label.css">
-
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/button.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/list.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/transition.css">
-
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.css">
+    <script src="../js/jQuery-3.3.1.js"></script>
+    <script src="../semantic/dist/semantic.js"></script>
 
     <style type="text/css">
-
-        .hidden.menu {
-            display: none;
-        }
-
-        .masthead.segment {
-            min-height: 700px;
-            padding: 1em 0em;
-        }
 
         .masthead .logo.item img {
             margin-right: 1em;
         }
 
-        .masthead .ui.menu .ui.button {
-            margin-left: 0.5em;
-        }
-
-        .masthead h1.ui.header {
-            margin-top: 3em;
-            margin-bottom: 0em;
-            font-size: 4em;
-            font-weight: normal;
-        }
-
         .masthead h2 {
             font-size: 1.7em;
             font-weight: normal;
-        }
-
-        .ui.vertical.stripe {
-            padding: 8em 0em;
         }
 
         .ui.vertical.stripe h3 {
@@ -87,33 +44,12 @@
             margin-top: 3em;
         }
 
-        .ui.vertical.stripe .floated.image {
-            clear: both;
-        }
-
         .ui.vertical.stripe p {
             font-size: 1.33em;
         }
 
-        .ui.vertical.stripe .horizontal.divider {
-            margin: 3em 0em;
-        }
-
-        .quote.stripe.segment {
-            padding: 0em;
-        }
-
-        .quote.stripe.segment .grid .column {
-            padding-top: 5em;
-            padding-bottom: 5em;
-        }
-
         .footer.segment {
             padding: 3em 0em;
-        }
-
-        .secondary.pointing.menu .toc.item {
-            display: none;
         }
 
         .header {
@@ -121,41 +57,14 @@
         }
 
         @media only screen and (max-width: 700px) {
-            .ui.fixed.menu {
-                display: none !important;
-            }
-
-            .secondary.pointing.menu .item,
-            .secondary.pointing.menu .menu {
-                display: none;
-            }
-
-            .secondary.pointing.menu .toc.item {
-                display: block;
-            }
-
-            .masthead.segment {
-                min-height: 350px;
-            }
-
-            .masthead h1.ui.header {
-                font-size: 2em;
-                margin-top: 1.5em;
-            }
 
             .masthead h2 {
                 margin-top: 0.5em;
                 font-size: 1.5em;
             }
-
         }
 
-
     </style>
-    <script src="../js/jQuery.min.js"></script>
-    <script src="../semantic/dist/components/visibility.js"></script>
-    <script src="../semantic/dist/components/sidebar.js"></script>
-    <script src="../semantic/dist/components/transition.js"></script>
 
 </head>
 
@@ -202,19 +111,29 @@
     </div>
 </div>
 
-<br><br><br><br>
+<br><br><br>
 
 <div class="ui container">
     <img class="ui centered large image" src="../photos/logo.png">
 </div>
 
-<br><br>
+<br>
 
-<div class="ui container center aligned">
+<div class="container">
     <form role="form" action="../servlets/searchs" method="get">
-        <div class="ui massive icon input">
-            <input type="text" placeholder="Search Papers..." name="keywords"/>
-            <i class="disabled search icon"></i>
+        <div class="ui container center aligned">
+            <div class="ui massive icon input">
+                <input type="text" placeholder="Search Papers..." name="keywords"/>
+                <i class="disabled search icon"></i>
+            </div>
+        </div>
+        <br>
+        <div class="ui container center aligned">
+            <select class="ui compact selection dropdown" name="type1">
+                <option value="fulltext">fulltext</option>
+                <option value="title">title</option>
+                <option value="author">author</option>
+            </select>
         </div>
     </form>
 </div>

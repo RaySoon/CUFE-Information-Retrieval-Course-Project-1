@@ -13,25 +13,7 @@
 
     <!-- Site Properties -->
     <title>Members</title>
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/site.css">
-
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/container.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/header.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/image.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/menu.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/card.css">
-
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/button.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/list.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/components/transition.css">
-
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/semantic/dist/semantic.css">
 
     <style type="text/css">
 
@@ -138,10 +120,8 @@
 
     </style>
 
-    <script src="../js/jQuery.min.js"></script>
-    <script src="../semantic/dist/components/visibility.js"></script>
-    <script src="../semantic/dist/components/sidebar.js"></script>
-    <script src="../semantic/dist/components/transition.js"></script>
+    <script src="../js/jQuery-3.3.1.js"></script>
+    <script src="../semantic/dist/semantic.js"></script>
 </head>
 <body>
 
